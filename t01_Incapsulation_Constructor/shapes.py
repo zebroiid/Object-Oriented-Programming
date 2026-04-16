@@ -14,6 +14,8 @@ class Triangle:
 
 class Rectangle:
     def __init__(self, a, b):
+        if a <= 0 or b <= 0:
+            raise ValueError
         self.a, self.b = a, b
     def perimeter(self):
         return 2 * (self.a + self.b)
@@ -23,6 +25,8 @@ class Rectangle:
 
 class Trapeze:
     def __init__(self, a, b, c, d):
+        if c + d > abs(a - b):
+            raise ValueError
         self.a, self.b, self.c, self.d = a, b, c, d
     def perimeter(self):
         return self.a + self.b + self.c + self.d
@@ -35,6 +39,8 @@ class Trapeze:
 
 class Parallelogram:
     def __init__(self, a, b, h):
+        if a <= 0 or b <= 0 or h <= 0 or h >= a:
+            raise ValueError
         self.a, self.b, self.h = a, b, h
     def perimeter(self):
         return 2 * (self.a + self.b)
@@ -44,6 +50,8 @@ class Parallelogram:
 
 class Circle:
     def __init__(self, r):
+        if r <= 0:
+            raise ValueError
         self.r = r
     def perimeter(self):
         return 2 * math.pi * self.r
@@ -85,4 +93,7 @@ def process_shapes(filename):
 
 
 for i in range(1, 4):
-    process_shapes(f"input{i:02d}.txt")
+    try:
+        process_shapes(f"input{i:02d}.txt")
+    except FileNotFoundError:
+        print(f"file input{i}.txt not found")
