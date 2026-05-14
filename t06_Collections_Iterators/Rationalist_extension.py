@@ -92,25 +92,26 @@ class RationalList:
 
 
 def process_files(filenames):
-    for filename in filenames:
-        r_list = RationalList()
-        try:
-            with open(filename, 'r') as f:
-                for line in f:
-                    parts = line.split()
-                    for part in parts:
-                        if '/' in part:
-                            n_str, d_str = part.split('/')
-                            r_list += Rational(int(n_str), int(d_str))
-                        else:
-                            r_list += int(part)
+    with open("output.txt", 'w', encoding="utf-8") as o:
+        for filename in filenames:
+            r_list = RationalList()
+            try:
+                with open(filename, 'r') as f:
+                    for line in f:
+                        parts = line.split()
+                        for part in parts:
+                            if '/' in part:
+                                n_str, d_str = part.split('/')
+                                r_list += Rational(int(n_str), int(d_str))
+                            else:
+                                r_list += int(part)
 
-            print(f"Результати для файлу: {filename}")
-            print(", ".join(str(item) for item in r_list))
-            print("\n")
+                print(f"Результати для файлу: {filename}", file=o)
+                print(", ".join(str(item) for item in r_list), file=o)
+                print("\n", file=o)
 
-        except FileNotFoundError:
-            print(f"Файл {filename} не знайдено.\n")
+            except FileNotFoundError:
+                print(f"Файл {filename} не знайдено.\n")
 
 
 
