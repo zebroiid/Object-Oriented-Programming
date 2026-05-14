@@ -37,11 +37,6 @@ class RationalList:
         if items:
             for item in items:
                 self._add_to_internal(item)
-    def __init__(self, items=None):
-        self._data = []
-        if items:
-            for item in items:
-                self._add_to_internal(item)
 
     def _add_to_internal(self, item):
         if isinstance(item, int):
@@ -91,8 +86,12 @@ class RationalList:
             res = res + x
         return res
 
+    def __iter__(self):
+        sorted_data = sorted(self._data, key=lambda r: (r.d, r.n), reverse=True)
+        return iter(sorted_data)
 
-def len_and_sum(filenames):
+
+def process_files(filenames):
     for filename in filenames:
         r_list = RationalList()
         try:
@@ -101,19 +100,19 @@ def len_and_sum(filenames):
                     parts = line.split()
                     for part in parts:
                         if '/' in part:
-                            n, d = map(int, part.split('/'))
-                            r_list += Rational(n, d)
+                            n_str, d_str = part.split('/')
+                            r_list += Rational(int(n_str), int(d_str))
                         else:
                             r_list += int(part)
 
-            total_sum = r_list.sum_all()
-            print(f"Файл: {filename}")
-            print(f"Кількість елементів: {len(r_list)}")
-            print(f"Сума послідовності: {total_sum}\n")
+            print(f"Результати для файлу: {filename}")
+            print(", ".join(str(item) for item in r_list))
+            print("\n")
 
         except FileNotFoundError:
-            print(f"Файл {filename} не знайдено.")
+            print(f"Файл {filename} не знайдено.\n")
 
 
-files = ['input01.txt', 'input02.txt', 'input03.txt']
-len_and_sum(files)
+
+input_files = ['input01.txt', 'input02.txt', 'input03.txt']
+process_files(input_files)
