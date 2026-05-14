@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16f8a101-860d-470a-b2f0-4201966de046" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/t07_Exeption_classes/Rational_exeption.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t06_Collections_Iterators/Rationalist_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/t06_Collections_Iterators/Rationalist_extension.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
