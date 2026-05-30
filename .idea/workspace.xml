@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16f8a101-860d-470a-b2f0-4201966de046" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/t08_Generators/8.3.1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/t09_Tkinter_Canvas/Bouncing Balls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/t10_Abstract_classes_interfaces_mixins/student_life_calculator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +41,10 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.8.3.1.executor": "Run",
+    "Python.Bouncing Balls.executor": "Run",
     "Python.Rational_exeption.executor": "Run",
     "Python.Rationalist_extension.executor": "Run",
+    "Python.student_life_calculator.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
